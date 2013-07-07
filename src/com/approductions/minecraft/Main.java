@@ -4,6 +4,7 @@
 package com.approductions.minecraft;
 
 import java.io.File;
+import java.util.logging.Logger;
 
 import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
@@ -27,11 +28,84 @@ public class Main {
 		return var0.contains("win") ? "Windows" : (var0.contains("mac") ? "Macosx" : (var0.contains("solaris") ? "Solaris" : (var0.contains("sunos") ? "Solaris" : (var0.contains("linux") ? "Linux" : (var0.contains("unix") ? "Linux" : "Unknown")))));
 	}
 	
+	public static Logger logger = null;
+	
+	/**
+	 * Here we set up the display.
+	 */
+	public void displaySetup() {
+		try {
+			Display.setDisplayMode(new DisplayMode(900, 700));
+		} catch (LWJGLException e) {
+			e.printStackTrace();
+		}
+		Display.setInitialBackground(0, 0, 0);
+		Display.setVSyncEnabled(false);
+		Display.setResizable(true);
+		PixelFormat format = new PixelFormat();
+		format = format.withDepthBits(16);
+		try {
+			Display.create(format);
+		} catch (LWJGLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Here we set up some native in-code support for mods.
+	 */
+	public void modSetup() {
+		
+	}
+	
+	/**
+	 * Here we set up the input systems.
+	 */
+	public void inputSetup() {
+		
+	}
+	
+	/**
+	 * The main loop, where everything is done
+	 */
+	public void loop() {
+		
+	}
+	
+	/**
+	 * Here we set up the log4j logging system.
+	 */
+	public void logSetup() {
+		logger = Logger.getLogger("minecraft");
+		
+	}
+	
+	/**
+	 * The main called method.
+	 */
+	public void start() {
+		displaySetup();
+		inputSetup();
+		modSetup();
+		logSetup();
+		loop();
+		closeProgram();
+		System.exit(0);
+	}
+	
+	/**
+	 * The following is called whenever the window is wanting to close.
+	 */
+	public void closeProgram() {
+		
+	}
+	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		//======================BEGIN LIBRARY LOADING==========================
+		//FIXME: The following DOES NOT LOAD THE LIBRARIES.
 		File libDir = new File("libs/native/" + getOs() + "/");
 		if(libDir.equals(null)) {
 			System.err.println("GAHH!");
@@ -58,21 +132,7 @@ public class Main {
 			inc++;
 		}
 		//==================END LIBRARY LOADING==============================
-		try {
-			Display.setDisplayMode(new DisplayMode(900, 700));
-		} catch (LWJGLException e) {
-			e.printStackTrace();
-		}
-		Display.setInitialBackground(0, 0, 0);
-		Display.setVSyncEnabled(false);
-		Display.setResizable(true);
-		PixelFormat format = new PixelFormat();
-		format = format.withDepthBits(16);
-		try {
-			Display.create(format);
-		} catch (LWJGLException e) {
-			e.printStackTrace();
-		}
+		
 	}
 
 }
