@@ -69,7 +69,8 @@ public class Main {
 	 * The main loop, where everything is done
 	 */
 	public void loop() {
-		
+		//NOTE: Render all like blocks together, in the same glBegin/glEnd set.
+		//Also, use display lists
 	}
 	
 	/**
