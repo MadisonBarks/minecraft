@@ -71,6 +71,10 @@ public class Main {
 	public void loop() {
 		//NOTE: Render all like blocks together, in the same glBegin/glEnd set.
 		//Also, use display lists
+		
+		//NOTE: In here, we need to check any generation threads, and make sure that
+		//They have not finished, and finish up the finished ones.
+		//Also, use a fork-join relationship.
 	}
 	
 	/**
