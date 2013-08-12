@@ -29,4 +29,7 @@ public class TextureManager {
 	public static void bindTexture(int glTextId) {
 		GL11.glBindTexture(GL11.GL_TEXTURE_2D, glTextId);
 	}
+	public static void deleteTexture() {
+		//TODO: Update
+	}
 }

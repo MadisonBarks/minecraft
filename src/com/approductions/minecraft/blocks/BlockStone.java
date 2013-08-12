@@ -1,5 +1,7 @@
 package com.approductions.minecraft.blocks;
 
+import org.lwjgl.opengl.GL11;
+
 import com.approductions.minecraft.gui.IGui;
 
 public class BlockStone implements IBlock {
@@ -24,38 +26,37 @@ public class BlockStone implements IBlock {
 
 	@Override
 	public int getLeftTextureId() {
-		// TODO Auto-generated method stub
-		return 0;
+		return 1;
 	}
 
 	@Override
 	public int getRightTextureId() {
-		// TODO Auto-generated method stub
-		return 0;
+		return 1;
 	}
 
 	@Override
 	public int getTopTextureId() {
-		// TODO Auto-generated method stub
-		return 0;
+		return 1;
 	}
 
 	@Override
 	public int getBottomTextureId() {
-		// TODO Auto-generated method stub
-		return 0;
+		return 1;
 	}
 
 	@Override
 	public int getFrontTextureId() {
-		// TODO Auto-generated method stub
-		return 0;
+		return 1;
 	}
 
 	@Override
 	public int getBackTextureId() {
-		// TODO Auto-generated method stub
-		return 0;
+		return 1;
+	}
+
+	@Override
+	public void draw() {
+		
 	}
 
 	
