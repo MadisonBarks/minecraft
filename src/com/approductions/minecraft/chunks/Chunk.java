@@ -103,4 +103,13 @@ public class Chunk {
 			
 		}
 	}
+	public void draw() {
+		for(short x = 0; x < blocks.length; x++) {
+			for(short z = 0; z < blocks[x].length; z++) {
+				for(IBlock block : blocks[x][z]) {
+					
+				}
+			}
+		}
+	}
 }

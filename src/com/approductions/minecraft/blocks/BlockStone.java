@@ -54,11 +54,6 @@ public class BlockStone implements IBlock {
 		return 1;
 	}
 
-	@Override
-	public void draw() {
-		
-	}
-
 	
 
 }

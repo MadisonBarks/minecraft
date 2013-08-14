@@ -58,10 +58,4 @@ public class BlockDirt implements IBlock {
 		return 0;
 	}
 
-	@Override
-	public void draw() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

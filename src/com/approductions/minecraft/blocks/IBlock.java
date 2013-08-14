@@ -12,5 +12,4 @@ public interface IBlock {
 	public int getBottomTextureId();
 	public int getFrontTextureId();
 	public int getBackTextureId();
-	public void draw();
 }
