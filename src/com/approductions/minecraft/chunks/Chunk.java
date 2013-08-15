@@ -1,5 +1,9 @@
 package com.approductions.minecraft.chunks;
 
+import java.nio.FloatBuffer;
+
+import org.lwjgl.BufferUtils;
+
 import com.approductions.minecraft.SimplexNoise;
 import com.approductions.minecraft.blocks.BlockDirt;
 import com.approductions.minecraft.blocks.BlockStone;
@@ -12,6 +16,7 @@ public class Chunk {
 	
 	private long xCoord;
 	private long zCoord;
+	private int vboId;
 	//             x z y
 	private IBlock[][][] blocks = new IBlock[16][16][255];
 	
@@ -43,8 +48,27 @@ public class Chunk {
 	public boolean isDisplayListGenerated() {
 		return generated;
 	}
-	public void generateDisplayList() {
+	private void displayList() {
 		
+	}
+	public void generateDisplay() {
+		vboId = UtilityMethods.createVBOId();
+		if(vboId == 0) {
+			displayList();
+			generated = true;
+			return;
+		}
+		FloatBuffer buffer = BufferUtils.createFloatBuffer(16 * 16 * 256);
+		for(short x = 0; x < blocks.length; x++) {
+			for(short z = 0; z < blocks[x].length; z++) {
+				for(IBlock block : blocks[x][z]) {
+					if(block == null) {
+						continue;
+					}
+					
+				}
+			}
+		}
 		generated = true;
 	}
 	public boolean isInBounds(long x, long z) {
@@ -104,12 +128,6 @@ public class Chunk {
 		}
 	}
 	public void draw() {
-		for(short x = 0; x < blocks.length; x++) {
-			for(short z = 0; z < blocks[x].length; z++) {
-				for(IBlock block : blocks[x][z]) {
-					
-				}
-			}
-		}
+		
 	}
 }

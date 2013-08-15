@@ -11,7 +11,7 @@ public class ChunkManager {
 	}
 	public static void addChunk(Chunk chunk) {
 		if(!chunk.isDisplayListGenerated()) {
-			chunk.generateDisplayList();
+			chunk.generateDisplay();
 		}
 		chunks.add(chunk);
 	}
